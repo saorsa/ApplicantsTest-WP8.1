@@ -14,7 +14,7 @@
             <converters:BooleanToVisibilityConverter.False>Collapsed</converters:BooleanToVisibilityConverter.False>
             <converters:BooleanToVisibilityConverter.True>Visible</converters:BooleanToVisibilityConverter.True>
         </converters:BooleanToVisibilityConverter>
-        <Style TargetType="TextBlock" x:Key="SectionsListViewFonts">
+        <Style TargetType="TextBlock" x:Key="DefaultFontSize">
             <Setter Property="FontSize" Value="20"></Setter>
         </Style>
         <Style TargetType="ListView" x:Key="SectionsStyle">
@@ -23,8 +23,8 @@
                     <DataTemplate>
                         <StackPanel Orientation="Vertical">
                             <StackPanel Margin="5,5,5,5" Orientation="Horizontal">
-                                <TextBlock Text="Section" Style="{StaticResource SectionsListViewFonts}"/>
-                                <TextBlock Text="{Binding Number}" Style="{StaticResource SectionsListViewFonts}"/>
+                                <TextBlock Text="Section" Style="{StaticResource DefaultFontSize}"/>
+                                <TextBlock Text="{Binding Number}" Style="{StaticResource DefaultFontSize}"/>
                             </StackPanel>
                             <ListView ItemsSource="{Binding Items}" Style="{StaticResource SectionItemsStyle}"></ListView>
                         </StackPanel>
@@ -38,8 +38,8 @@
                     <DataTemplate>
                         <Grid>
                             <StackPanel Margin="5,5,5,5" Orientation="Horizontal">
-                                <TextBlock Text="Item" Style="{StaticResource SectionsListViewFonts}"/>
-                                <TextBlock Text="{Binding Number}" Style="{StaticResource SectionsListViewFonts}"/>
+                                <TextBlock Text="Item" Style="{StaticResource DefaultFontSize}"/>
+                                <TextBlock Text="{Binding Number}" Style="{StaticResource DefaultFontSize}"/>
                                 <Path Width="15" Visibility="{Binding Path=Checked, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="10,0,0,0" Height="15" Stretch="Fill" Fill="White" Data="F1 M 23.7501,33.25L 34.8334,44.3333L 52.2499,22.1668L 56.9999,26.9168L 34.8334,53.8333L 19.0001,38L 23.7501,33.25 Z "/>
                                 <Path Width="15" Visibility="{Binding Path=Checked, Converter={StaticResource InverseBooleanToVisibilityConverter}}" Margin="10,0,0,0" Height="15" Stretch="Fill" Fill="White" Data="F1 M 38,19C 48.4934,19 57,27.5066 57,38C 57,48.4934 48.4934,57 38,57C 27.5066,57 19,48.4934 19,38C 19,27.5066 27.5066,19 38,19 Z M 38,23.75C 35.2116,23.75 32.6102,24.5509 30.4134,25.9352L 50.0648,45.5866C 51.4491,43.3898 52.25,40.7884 52.25,38C 52.25,30.13 45.87,23.75 38,23.75 Z M 23.75,38C 23.75,45.8701 30.1299,52.25 38,52.25C 40.7884,52.25 43.3897,51.4491 45.5865,50.0649L 25.9351,30.4136C 24.5509,32.6103 23.75,35.2117 23.75,38 Z "/>
                             </StackPanel>

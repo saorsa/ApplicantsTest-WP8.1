@@ -3,7 +3,7 @@
     using System.Net.NetworkInformation;
     using Windows.Networking.Connectivity;
 
-    public class ConnectivityHelpers
+    public static class ConnectivityHelpers
     {
         public static bool CheckNetworkConnection()
         {
