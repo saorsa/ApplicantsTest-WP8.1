@@ -15,7 +15,7 @@ namespace ApplicantsTest.UnitTests
         [TestMethod]
         public void When_String_Data_Valid_Test_Item_Conversion()
         {
-            var item = Item.Parse(byte.Parse("140"));
+            var item = new Item(140);
             Assert.AreEqual(4, item.Number);
             Assert.AreEqual(true, item.Checked);
         }

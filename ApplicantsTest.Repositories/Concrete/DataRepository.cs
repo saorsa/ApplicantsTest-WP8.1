@@ -45,7 +45,7 @@ namespace ApplicantsTest.Repositories.Concrete
                 {
                     //Will lazy loading be overengineering?
                     //Also assuming that the section number will always be byte
-                    return sectionsAndItems.Select(s => Section.Parse((byte)s.GetNumber()))
+                    return sectionsAndItems.Select(s => new Section((byte)s.GetNumber()))
                                            .GroupBy(s => s.Number,
                                                     s => s,
                                                     (key, group) => new Section(key, @group.SelectMany(s => s.Items).ToList()))

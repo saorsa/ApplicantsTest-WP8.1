@@ -9,9 +9,9 @@ namespace ApplicantsTest.UnitTests
     public class SectionTests
     {
         [TestMethod]
-        public void When_String_Data_Valid_Test_Section_Creation()
+        public void When_String_Data_Valid_Test_Section_Construction()
         {
-            var section = Section.Parse(140);
+            var section = new Section(140);
             Assert.AreEqual(1, section.Number,"Incorrect section number extraction.");
             Assert.IsNotNull(section.Items, "Incorrect Items extraction");
             Assert.AreEqual(1, section.Items.Count(), "Incorrect Items extraction");
