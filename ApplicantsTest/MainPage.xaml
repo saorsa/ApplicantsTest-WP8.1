@@ -14,14 +14,15 @@
             <converters:BooleanToVisibilityConverter.False>Collapsed</converters:BooleanToVisibilityConverter.False>
             <converters:BooleanToVisibilityConverter.True>Visible</converters:BooleanToVisibilityConverter.True>
         </converters:BooleanToVisibilityConverter>
+        <converters:InverseBooleanConverter x:Key="InverseBooleanConverter"></converters:InverseBooleanConverter>
     </Page.Resources>
     <Grid
         d:DataContext="{Binding Source= {d:DesignInstance Type=vm:MainPageViewModel,IsDesignTimeCreatable=True}}">
         <StackPanel  Orientation="Vertical" HorizontalAlignment="Stretch">
             <TextBlock Text="Loading..." Visibility="{Binding LoadingData, Converter={StaticResource BooleanToVisibilityConverter}}"></TextBlock>
             <TextBlock Text="Data extraction URL:" Style="{StaticResource DefaultFontSize}"></TextBlock>
-            <TextBox Text="{Binding DataExtractionUrl}" ></TextBox>
-            <Button HorizontalAlignment="Center" Command="{Binding ExtractDataCommand}" Content="Get data"></Button>
+            <TextBox Text="{Binding DataExtractionUrl}" IsEnabled="{Binding LoadingData, Converter={StaticResource InverseBooleanConverter}}"></TextBox>
+            <Button HorizontalAlignment="Center" IsEnabled="{Binding LoadingData, Converter={StaticResource InverseBooleanConverter}}" Command="{Binding ExtractDataCommand}" Content="Get data"></Button>
             <ListView ItemsSource="{Binding Sections}" Style="{StaticResource SectionsStyle}"></ListView>
         </StackPanel>
         

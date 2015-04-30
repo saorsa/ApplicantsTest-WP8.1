@@ -22,6 +22,7 @@
         public MainPageViewModel()
         {
             Sections = new ObservableCollection<Section>();
+            LoadingData = false;
             // Initializing the value for the sake of user experience
             DataExtractionUrl = "http://foo.bragi.net/numbers.json";
         }
